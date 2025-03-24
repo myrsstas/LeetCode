@@ -5,15 +5,15 @@
  * where each candies[i] represents the number of candies the ith kid has, and an integer extraCandies,
  * denoting the number of extra candies that you have.
 
-Return a boolean array result of length n, where result[i] is true if, after giving 
-the ith kid all the extraCandies, they will have the greatest number of candies among all the 
+Return a boolean array result of length n, where result[i] is true if, after giving
+the ith kid all the extraCandies, they will have the greatest number of candies among all the
 kids, or false otherwise.
 
 Note that multiple kids can have the greatest number of candies.
 
 Example :
 Input: candies = [2,3,5,1,3], extraCandies = 3
-Output: [true,true,true,false,true] 
+Output: [true,true,true,false,true]
 Explanation: If you give all extraCandies to:
 - Kid 1, they will have 2 + 3 = 5 candies, which is the greatest among the kids.
 - Kid 2, they will have 3 + 3 = 6 candies, which is the greatest among the kids.
@@ -24,32 +24,17 @@ Explanation: If you give all extraCandies to:
 
 public class KidsWithCandiesSolution
 {
-    public IList<bool> KidsWithCandies(int[] candies, int extraCandies) {
+    public IList<bool> KidsWithCandies(int[] candies, int extraCandies)
+    {
         int maxCandies = candies.Max();
         bool[] result = new bool[candies.Length];
 
-        for(int i = 0; i<candies.Length; i++){
+        for (int i = 0; i < candies.Length; i++)
+        {
             result[i] = (candies[i] + extraCandies) >= maxCandies;
         }
 
         return result;
     }
-    
-    
-//  public IList<bool> KidsWithCandies(int[] candies, int extraCandies) {
-//  bool[] result = new bool[candies.Length];
-//   for (int i=0; i<candies.Length; i++){
-//   for (int j=0; j<candies.Length; j++){
-//    if (candies[i]+extraCandies>candies[j]){
-//     result[i] = true;
-//    } else{
-//     result[i] = false;
-//    }
-//   }
-//  }
-// return result;
-// }   
-
-
 
 }
